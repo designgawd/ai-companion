@@ -1,6 +1,5 @@
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
-import { toNamespacedPath } from "path/win32";
 
 // ALARA : As low as reasonably achievable
 
