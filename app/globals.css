@@ -29,3 +29,35 @@ body {
     font-weight: 500;
   }
 }
+
+.chat-section::-webkit-scrollbar {
+  display: none;
+}
+
+.goaway {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s, transform 1s;
+
+  &.left {transform: translate(-100%);}
+  &.right {transform: translate(200%);}
+}
+.showup {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.left-pos{
+  left: 2rem;
+  right: initial;
+  transition: left 2s, right 2s;
+} 
+
+.right-pos{
+  left:initial;
+  right: 2rem;
+  transition: left 2s, right 2s;
+}
+

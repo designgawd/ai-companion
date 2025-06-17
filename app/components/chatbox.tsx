@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import MessageRequest from "./messageRequest";
+import { Bartender } from "./bartender";
 
-function Chatbox() {
+function Chatbox({girl}) {
   const [inputText, setInputText] = useState("");
   const [messages, setMessages] = useState([
         {
@@ -12,6 +13,12 @@ function Chatbox() {
         }
     ]);
   const [loading, setLoading] = useState(false);
+  const bartenders = Bartender();
+  const bargirl = bartenders[girl];
+
+  const scrollToElement = () => {
+    
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,12 +31,9 @@ function Chatbox() {
     setLoading(true);
     setInputText("");
 
-    // Move to bottom of screen, showing users message
-    setTimeout(()=>{window.scrollTo(0, document.body.scrollHeight)},100);
-
     // Add users message to history and request for response
     messages.push({role:"user",content: inputText});
-    const systemResponse = await MessageRequest(messages);
+    const systemResponse = await MessageRequest(messages, bargirl.name || "Alara", bargirl.personality || "witty");
 
     // Add response to history
     messages.push(systemResponse);
@@ -37,17 +41,18 @@ function Chatbox() {
     // Publish to page
     setMessages(messages);
 
+    console.log("convo", JSON.stringify(messages));
+
     setLoading(false);
 
-    // Move to the bottom of screen to show response
-    setTimeout(()=>{window.scrollTo(0, document.body.scrollHeight)},100);
+    scrollToElement();
 
     
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-8 pb-36">
-      <div className="flex flex-col gap-8 w-full max-w-4xl">
+    <div className="min-h-screen flex flex-col items-center py-4 px-8">
+      <div className="flex flex-col gap-8 w-full max-w-4xl overflow-auto">
 
         {messages.length && messages.map((message, index) => {
           return (
@@ -68,7 +73,7 @@ function Chatbox() {
         
       </div>
 
-      <div className="fixed bottom-0 w-auto py-6">
+      <div className="sticky bottom-0 py-12 bg-black w-[100%] mask-t-from-90%">
         <form
           onSubmit={handleSubmit}
           className="flex items-center justify-center gap-4"
