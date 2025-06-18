@@ -65,7 +65,7 @@ export default function HomePage() {
           alt={bartenders[girl].name}
           width={3840}
           height={2160}
-          className={` min-w-screen absolute mask-b-from-70%  top-0 2xl:left-50 ${!chatting ? "goaway right" : "2xl:absolute showup"}`}/>
+          className={` min-w-screen absolute mask-b-from-70%  top-0 ${!chatting ? "goaway right" : "2xl:absolute showup"}`}/>
       </div>
 
       <Image onClick={resetAll} alt="" src={logo} className={`fixed top-8 w-[30%] md:w-[20%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
