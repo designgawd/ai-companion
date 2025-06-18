@@ -37,12 +37,12 @@ export default function HomePage() {
 
       <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      <div className="min-h-screen min-w-screen fixed">
-      <Image
-        src={bartenders[girl].image}
-        alt={bartenders[girl].name}
-        fill
-        className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
+      <div className="min-h-screen min-w-screen fixed left-50">
+        <Image
+          src={bartenders[girl].image}
+          alt={bartenders[girl].name}
+          fill
+          className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
       </div>
 
       <Image alt="" src={logo} className={`fixed top-8 w-[12%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
