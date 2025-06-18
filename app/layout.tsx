@@ -19,7 +19,7 @@ const robotoCondensed = Roboto_Condensed({
 
 export const metadata: Metadata = {
   title: "Alara - Step Up Your Game",
-  description: "You just arrived to a bar solo. You have a seat at the bar and notice the bartender noticing you. No matter if you are shy or always ready for social interactions, it is time for you to wow this girl and see where things go.",
+  description: "AI Companion - You just arrived to a bar solo. You have a seat at the bar and notice the bartender noticing you. No matter if you are shy or always ready for social interactions, it is time for you to wow this girl and see where things go.",
 };
 
 export default function RootLayout({
