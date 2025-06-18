@@ -4,6 +4,12 @@
 
 **AI Companion** is a dynamic web-based chatbot interface powered by cutting-edge AI models. Built with Next.js and hosted on Vercel, it provides users with a simple, elegant, and interactive way to engage with artificial intelligence in real time.
 
+**Scenario**: You’ve just arrived at a bar solo. You take a seat and notice the bartender noticing you. Whether you’re shy or always up for social interaction, it’s time to impress this girl and see where the night takes you.
+
+You’ll meet a random bartender — and each one has a different personality. This gives you the exciting challenge of navigating unique interactions every time you use this service.
+
+But there’s a twist: you only have 3 minutes. She’s busy, and there’s plenty of competition around you! Don’t forget to order your drink before you lose her attention.
+
 [🌐 Visit Live Site](https://ai-companion-navy.vercel.app)
 
 ---
