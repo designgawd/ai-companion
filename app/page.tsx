@@ -34,12 +34,12 @@ export default function HomePage() {
 
   return (
     <div className="bg-[url(/images/Alara---Desktop-BG.jpg)] bg-cover min-h-screen bg-linear-to-r from-cyan-500 to-blue-500 overflow-hidden relative">
-      
+
       <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      <img 
-        src={bartenders[girl].image} 
-        alt={bartenders[girl].name} 
+      <img
+        src={bartenders[girl].image}
+        alt={bartenders[girl].name}
         width={"100"}
         className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
 
@@ -50,20 +50,20 @@ export default function HomePage() {
         <div className="main-content">
 
           <div className={`mask-r-from-70% w-1/2 fixed left-[-50px] top-1/6 ${getStarted ? "goaway left" : "showup"}`}>
-          
+
             <div className={`bg-black rounded-2xl p-8 pl-20`}>
               <h1 className="text-amber-50 text-8xl min-[2400px]:text-9xl">Artificial <br/> Intelligent for  <br/> Rasing Your Bar</h1>
             </div>
 
             <div className="p-8 pl-20 text-amber-50 text-2xl min-[2400px]:text-4xl">Practice you skills on closing the deal, when meeting a girl at a bar... <br/> Try your favorite pickup lines and see how they would land.</div>
-            
+
             <div className="p-8 pl-20 grid grid-cols-2 gap-4 w-3/4">
               <div><button className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Learn More</button>
               </div>
               <div><button onClick={handleGetStarted} className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Get Started</button>
               </div>
             </div>
-          
+
           </div>
 
           <div className={`bg-amber-50 rounded-2xl w-1/2 fixed bottom-30 right-[-50px] ${chatting ? "goaway right" : "showup"}`}>
@@ -102,10 +102,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        
-      
-      
     </div>
-    
   );
 }
