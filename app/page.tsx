@@ -10,7 +10,7 @@ import logoOpenArt from "../public/images/Alara---Desktop-openArt.png";
 import { Bartender } from "./components/bartender";
 
 
-function HomePage() {
+export default function HomePage() {
 
   const [getStarted, setGetStarted] = useState(false);
   const [chatting, setChatting] = useState(false);
@@ -37,11 +37,11 @@ function HomePage() {
       
       <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      {<img 
+      <img 
         src={bartenders[girl].image} 
         alt={bartenders[girl].name} 
         width={"100"}
-        className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>}
+        className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
 
       <Image alt="" src={logo} className={`fixed top-8 w-[12%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
 
@@ -109,5 +109,3 @@ function HomePage() {
     
   );
 }
-
-export default HomePage;
