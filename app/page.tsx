@@ -22,7 +22,7 @@ export default function HomePage() {
   }
 
   function handleGetStarted() {
-    if(getStarted) { return setGetStarted(true) } else { return setGetStarted(false) };
+    if(!getStarted) { setGetStarted(true) } else { setGetStarted(false) };
   }
 
   function startChatting() {
