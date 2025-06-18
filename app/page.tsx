@@ -37,7 +37,6 @@ export default function HomePage() {
       
       <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-expression
       <img 
         src={bartenders[girl].image} 
         alt={bartenders[girl].name} 
