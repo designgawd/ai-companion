@@ -22,7 +22,7 @@ export default function HomePage() {
   }
 
   function handleGetStarted() {
-    !getStarted ? setGetStarted(true) : setGetStarted(false);
+    if(getStarted) { setGetStarted(true) } else { setGetStarted(false) };
   }
 
   function startChatting() {
@@ -37,11 +37,13 @@ export default function HomePage() {
 
       <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      <img
+      <div className="min-h-screen min-w-screen fixed">
+      <Image
         src={bartenders[girl].image}
         alt={bartenders[girl].name}
-        width={"100"}
+        fill
         className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
+      </div>
 
       <Image alt="" src={logo} className={`fixed top-8 w-[12%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
 
