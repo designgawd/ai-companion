@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Image from "next/image";
 import MessageRequest from "./messageRequest";
 import { Bartender } from "./bartender";
 type Messages = [{
@@ -22,10 +23,12 @@ function Chatbox({girl}: ChatboxProps) {
   const [loading, setLoading] = useState(false);
   const bartenders = Bartender();
   const bargirl = bartenders[girl];
+  const myElementRef = useRef<null | HTMLDivElement>(null);
 
-  const scrollToElement = () => {
-    
-  }
+const scrollToElement = () => {
+      myElementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,6 +40,7 @@ function Chatbox({girl}: ChatboxProps) {
     // Set loading state and empty text field
     setLoading(true);
     setInputText("");
+    setTimeout(()=>scrollToElement(),100);
 
     // Add users message to history and request for response
     messages.push({role:"user",content: inputText});
@@ -51,20 +55,19 @@ function Chatbox({girl}: ChatboxProps) {
     console.log("convo", JSON.stringify(messages));
 
     setLoading(false);
+    setTimeout(()=>scrollToElement(),100);
 
-    scrollToElement();
-
-    
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center py-4 px-8">
-      <div className="flex flex-col gap-8 w-full max-w-4xl overflow-auto">
+      <div id="chatBox" className="flex flex-col gap-8 w-full max-w-4xl overflow-auto">
 
-        {messages.length && messages.map((message, index) => {
+        {messages.length && messages.map((message, index, row) => {
           return (
             <div
               key={index}
+              ref={index+1===row.length ? myElementRef : null}
               className={`messages p-4 rounded-2xl max-w-[70%] text-shadow-lg drop-shadow-xl/25 border-solid border-amber-50 border-4 ${
                 message.role === "user"
                   ? "bg-linear-to-r from-cyan-500 to-blue-500 text-white ml-auto"
@@ -76,8 +79,8 @@ function Chatbox({girl}: ChatboxProps) {
           );
         })}
 
-        {loading && <div>Loading...</div>}
-        
+        {loading && <div ref={myElementRef}><Image src="/images/loading.gif" alt="alt" width={50} height={50} /></div>}
+
       </div>
 
       <div className="sticky bottom-0 py-12 bg-black w-[100%] mask-t-from-90%">
