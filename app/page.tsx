@@ -65,10 +65,10 @@ export default function HomePage() {
           alt={bartenders[girl].name}
           width={3840}
           height={2160}
-          className={` min-w-screen absolute mask-b-from-70%  top-0 2xl:left-50 ${!chatting ? "goaway right" : "2xl:absolute showup"}`}/>
+          className={` min-w-screen absolute mask-b-from-70%  top-0 ${!chatting ? "goaway right" : "2xl:absolute showup"}`}/>
       </div>
 
-      <Image onClick={resetAll} alt="" src={logo} className={`fixed top-8 w-[30%] md:w-[20%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
+      <Image onClick={resetAll} alt="Alara Logo" src={logo} className={`fixed top-8 w-[30%] md:w-[20%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
 
       <div className={`z-[1] absolute right-[-5px] 2xl:right-[-50px] top-20 2xl:top-50 bg-black p-4 2xl:px-24 md:rounded-2xl w-1/4 text-amber-50 text-2xl ${chatting ? "showup" : "goaway right"}`}>
         {bartenders[girl].name}</div>
@@ -93,9 +93,9 @@ export default function HomePage() {
 
           <div className={`bg-amber-50 2xl:rounded-2xl w-[100%] 2xl:w-1/2 fixed bottom-0 2xl:bottom-30 2xl:right-[-50px] ${chatting || end ? "goaway right" : "showup"}`}>
             <div className="grid grid-cols-3 gap-4 2xl:w-3/4 ">
-              <div className="p-4 content-center justify-items-center"><Image alt="" src={logoNextJS} style={{width:"125px"}} /></div>
-              <div className="p-4 content-center justify-items-center"><Image alt="" src={logoOpenAI} style={{width:"125px"}} /></div>
-              <div className="p-4 content-center justify-items-center"><Image alt="" src={logoOpenArt} style={{width:"125px"}} /></div>
+              <div className="p-4 content-center justify-items-center"><Image alt="NextJS logo" src={logoNextJS} style={{width:"125px"}} /></div>
+              <div className="p-4 content-center justify-items-center"><Image alt="OpenAI logo" src={logoOpenAI} style={{width:"125px"}} /></div>
+              <div className="p-4 content-center justify-items-center"><Image alt="OpenArt logo" src={logoOpenArt} style={{width:"125px"}} /></div>
             </div>
           </div>
 
