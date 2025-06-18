@@ -3,15 +3,22 @@
 import { useState } from "react";
 import MessageRequest from "./messageRequest";
 import { Bartender } from "./bartender";
+type Messages = [{
+    role: string;
+    content: string;
+}];
+interface ChatboxProps {
+  girl: number;
+}
 
-function Chatbox({girl}) {
+function Chatbox({girl}: ChatboxProps) {
   const [inputText, setInputText] = useState("");
-  const [messages, setMessages] = useState([
-        {
+  
+  const [messages, setMessages] = useState<Messages>(
+        [{
             role:"system",
             content: "How can I help you!?",
-        }
-    ]);
+        }]);
   const [loading, setLoading] = useState(false);
   const bartenders = Bartender();
   const bargirl = bartenders[girl];

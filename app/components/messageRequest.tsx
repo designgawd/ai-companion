@@ -1,7 +1,7 @@
-type ChatInput = {
-    message: string;
-    context?: Record<string, unknown>;
-};
+type ChatInput = [{
+    role: string;
+    content: string;
+}];
 
 type ChatResponse = {
     role: "system";
