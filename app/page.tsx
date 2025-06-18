@@ -102,16 +102,16 @@ export default function HomePage() {
           <div className={`get-started md:w-7/8 2xl:w-3/8 fixed left-[-50px] top-[10%] md:top-[20%] 2xl:top-1/6  ${!getStarted ? "goaway left" : "showup"} ${chatting || end ? "goaway left" : ""}`}>
             <div className={`bg-black/75 md:rounded-2xl p-8 pl-20`}>
               <p className="text-amber-50 py-1 md:py-4 text-sm 2xl:text-xl">
-                Here is the scenario.  You just arrived to a bar solo.  You have a seat at the bar and notice the bartender noticing you.  No matter if you are shy or always ready for social interactions, it is time for you to wow this girl and see where things go.
+                Here is the scenario.  You’ve just arrived at a bar solo. You take a seat and notice the bartender noticing you. Whether you’re shy or always up for social interaction, it’s time to impress this girl and see where the night takes you.
               </p>
               <p className="text-amber-50 py-1 md:py-4 text-sm 2xl:text-xl">
-                You will meet a random girl.  Each girl can have a different personality.  This will give you the challenges of meeting different type of girls each time you use this service.
+                You’ll meet a random bartender — and each one has a different personality. This gives you the exciting challenge of navigating unique interactions every time you use this service.
               </p>
               <p className="text-amber-50 py-1 md:py-4 text-sm 2xl:text-xl">
-                You will only have 3 minutes... she is busy, so she doesn&apos;t have much time and there is plenty of competition around you!  Don&apos;t forget to order your drink before you lose her.
+                But there’s a twist: you only have 3 minutes. She’s busy, and there’s plenty of competition around you! Don’t forget to order your drink before you lose her attention.
               </p>
               <p className="text-amber-50 py-1 md:py-4 text-sm 2xl:text-xl">
-                If you are not interseted in your bartender you wait for the next on by refreshing the page and starting over.  Luck you, not many people get that chance!
+                Not feeling a connection? No problem. Refresh the page, or come back another day, to meet a new bartender and start over. Lucky you — not everyone gets a second chance!
               </p>
             </div>
             <div className="p-8 pl-20 grid grid-cols-2 gap-4">
