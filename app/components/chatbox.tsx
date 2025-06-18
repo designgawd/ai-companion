@@ -4,31 +4,42 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import MessageRequest from "./messageRequest";
 import { Bartender } from "./bartender";
+import Timer from "./timer";
+
 type Messages = [{
     role: string;
     content: string;
 }];
 interface ChatboxProps {
   girl: number;
+  callback: (data: boolean) => void;
 }
 
-function Chatbox({girl}: ChatboxProps) {
+function Chatbox({girl, callback}: ChatboxProps) {
   const [inputText, setInputText] = useState("");
-  
   const [messages, setMessages] = useState<Messages>(
         [{
             role:"system",
             content: "How can I help you!?",
         }]);
   const [loading, setLoading] = useState(false);
+  const [startTimer, setStartTimer] = useState(false);
+  const [end, setEnd] = useState(false);
   const bartenders = Bartender();
   const bargirl = bartenders[girl];
   const myElementRef = useRef<null | HTMLDivElement>(null);
 
-const scrollToElement = () => {
+  const scrollToElement = () => {
       myElementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const handleTimer = (timerComplete:boolean) => {
+    if(timerComplete) {
+      setEnd(true);
+      setInputText("");
+      callback(true);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,8 +47,10 @@ const scrollToElement = () => {
     // Avoid rapid questions and empty text field
     if (loading) return;
     if (!inputText) return;
+    if (end) return;
 
     // Set loading state and empty text field
+    setStartTimer(true);
     setLoading(true);
     setInputText("");
     setTimeout(()=>scrollToElement(),100);
@@ -60,7 +73,7 @@ const scrollToElement = () => {
   };
 
   return (
-    <div className="2xl:min-h-screen flex flex-col items-center py-4 px-8">
+    <div className="bg-black 2xl:min-h-screen flex flex-col items-center py-4 px-8">
       <div id="chatBox" className="flex flex-col gap-8 w-full max-w-4xl overflow-auto">
 
         {messages.length && messages.map((message, index, row) => {
@@ -90,7 +103,7 @@ const scrollToElement = () => {
         >
           <input
             className="rounded-lg p-4 bg-gray-300 drop-shadow-xl/25 border-solid border-amber-50 border-4 text-gray-600 w-[500px]"
-            placeholder={`Say something to ${bargirl.name}...`}
+            placeholder={end ? "YOUR TIME IS UP!!" : `Say something to ${bargirl.name}...`}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           />
@@ -100,13 +113,16 @@ const scrollToElement = () => {
               loading ? "opacity-50" : ""
             }`}
             type="submit"
-            disabled={loading}
+            disabled={loading || end}
           >
             Send
           </button>
         </form>
       </div>
+      <div className="sticky bottom-0 right-0">
+        <Timer initialMinutes={0} initialSeconds={10} start={startTimer} callback={handleTimer} /></div>
     </div>
+
   );
 }
 
