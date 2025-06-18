@@ -92,7 +92,7 @@ function Chatbox({girl, callback}: ChatboxProps) {
           );
         })}
 
-        {loading && <div ref={myElementRef}><Image src="/images/loading.gif" alt="Loading Giff" width={50} height={50} /></div>}
+        {loading && <div ref={myElementRef}><Image src="/images/loading.gif" alt="alt" width={50} height={50} /></div>}
 
       </div>
 
