@@ -33,74 +33,75 @@ export default function HomePage() {
 
 
   return (
-    <div className="bg-[url(/images/Alara---Desktop-BG.jpg)] bg-cover min-h-screen bg-linear-to-r from-cyan-500 to-blue-500 overflow-hidden relative">
+    <div className="2xl:bg-[url(/images/Alara---Desktop-BG.jpg)] bg-cover min-h-screen bg-linear-to-r bg-black overflow-hidden relative">
 
-      <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-cover min-h-screen min-w-screen absolute top-0 left-50 ${chatting ? "goaway right" : "showup"}`}></div>
+      <div className={`z-[0] mask-l-from-50% bg-[url(/images/Alara---Desktop-girl1.jpg)] bg-center bg-cover min-h-screen min-w-screen absolute top-0 2xl:left-50 ${chatting ? "goaway right" : "showup"}`}></div>
 
-      <div className="min-h-screen min-w-screen fixed left-50">
+      <div className="min-h-screen min-w-screen fixed 2xl:left-50">
         <Image
           src={bartenders[girl].image}
           alt={bartenders[girl].name}
-          fill
-          className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>
+          width={3840}
+          height={2160}
+          className={` min-w-screen absolute mask-b-from-70%  top-0 2xl:left-50 ${!chatting ? "goaway right" : "2xl:absolute showup"}`}/>
       </div>
 
       <Image alt="" src={logo} className={`fixed top-8 w-[12%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
 
-      <div className={`z-[1] absolute right-[-50px] top-50 bg-black p-4 px-24 rounded-2xl w-1/4 text-amber-50 text-2xl ${chatting ? "showup" : "goaway right"}`}>
+      <div className={`z-[1] absolute right-[-15px] 2xl:right-[-50px] top-20 2xl:top-50 bg-black p-4 2xl:px-24 rounded-2xl w-1/4 text-amber-50 text-2xl ${chatting ? "showup" : "goaway right"}`}>
         {bartenders[girl].name}</div>
         <div className="main-content">
 
-          <div className={`mask-r-from-70% w-1/2 fixed left-[-50px] top-1/6 ${getStarted ? "goaway left" : "showup"}`}>
+          <div className={`mask-r-from-70% 2xl:w-1/2 fixed top-[20%] 2xl:left-[-50px] 2xl:top-1/6 ${getStarted ? "goaway left" : "showup"}`}>
 
-            <div className={`bg-black rounded-2xl p-8 pl-20`}>
-              <h1 className="text-amber-50 text-8xl min-[2400px]:text-9xl">Artificial <br/> Intelligent for  <br/> Rasing Your Bar</h1>
+            <div className={`bg-black/75 2xl:bg-black rounded-2xl p-8 2xl:pl-20`}>
+              <h1 className="text-amber-50 text-4xl 2xl:text-9xl">Artificial <br/> Intelligent for  <br/> Rasing Your Bar</h1>
             </div>
 
-            <div className="p-8 pl-20 text-amber-50 text-2xl min-[2400px]:text-4xl">Practice you skills on closing the deal, when meeting a girl at a bar... <br/> Try your favorite pickup lines and see how they would land.</div>
+            <div className="p-8 2xl:pl-20 text-amber-50 text-l 2xl:text-2xl">Practice you skills on closing the deal, when meeting a girl at a bar... <br/> Try your favorite pickup lines and see how they would land.</div>
 
-            <div className="p-8 pl-20 grid grid-cols-2 gap-4 w-3/4">
-              <div><button className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Learn More</button>
+            <div className="p-8 2xl:pl-20 grid grid-cols-2 gap-4 w-[100%] 2xl:w-3/4">
+              <div><button className="bg-blue-500 hover:bg-blue-700 p-8 2xl:font-medium 2xl:text-2xl text-white py-2 2xl:px-20 rounded-2xl">Learn More</button>
               </div>
-              <div><button onClick={handleGetStarted} className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Get Started</button>
+              <div><button onClick={handleGetStarted} className="bg-blue-500 hover:bg-blue-700 p-8 2xl:font-medium 2xl:text-2xl text-white py-2 2xl:px-20 rounded-2xl">Get Started</button>
               </div>
             </div>
 
           </div>
 
-          <div className={`bg-amber-50 rounded-2xl w-1/2 fixed bottom-30 right-[-50px] ${chatting ? "goaway right" : "showup"}`}>
-            <div className="grid grid-cols-3 gap-4 w-3/4 ">
+          <div className={`bg-amber-50 2xl:rounded-2xl w-[100%] 2xl:w-1/2 fixed bottom-0 2xl:bottom-30 2xl:right-[-50px] ${chatting ? "goaway right" : "showup"}`}>
+            <div className="grid grid-cols-3 gap-4 2xl:w-3/4 ">
               <div className="p-4 content-center justify-items-center"><Image alt="" src={logoNextJS} style={{width:"125px"}} /></div>
               <div className="p-4 content-center justify-items-center"><Image alt="" src={logoOpenAI} style={{width:"125px"}} /></div>
               <div className="p-4 content-center justify-items-center"><Image alt="" src={logoOpenArt} style={{width:"125px"}} /></div>
             </div>
           </div>
 
-          <div className={`get-started w-3/8 fixed left-[-50px] top-1/6  ${!getStarted ? "goaway left" : "showup"} ${chatting ? "goaway left" : ""}`}>
-            <div className={`bg-black rounded-2xl p-8 pl-20`}>
-              <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
+          <div className={`get-started md:w-7/8 2xl:w-3/8 fixed left-[-50px] top-[10%] md:top-[20%] 2xl:top-1/6  ${!getStarted ? "goaway left" : "showup"} ${chatting ? "goaway left" : ""}`}>
+            <div className={`bg-black/75 md:rounded-2xl p-8 pl-20`}>
+              <p className="text-amber-50 py-4 text-l 2xl:text-xl">
                 Here is the scenario.  You just arrived to a bar solo.  You have a seat at the bar and notice the bartender noticing you.  No matter if you are shy or always ready for social interactions, it is time for you to wow this girl and see where things go.
               </p>
-              <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
+              <p className="text-amber-50 py-4 text-l 2xl:text-xl">
                 You will meet a random girl.  Each girl can have a different personality.  This will give you the challenges of meeting different type of girls each time you use this service.
               </p>
-              <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
+              <p className="text-amber-50 py-4 text-l 2xl:text-xl">
                 You will only have 3 minutes... she is busy, so she doesn&apos;t have much time and there is plenty of competition around you!  Don&apos;t forget to order your drink before you lose her.
               </p>
-              <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
+              <p className="text-amber-50 py-4 text-l 2xl:text-xl">
                 If you are not interseted in your bartender you wait for the next on by refreshing the page and starting over.  Luck you, not many people get that chance!
               </p>
             </div>
             <div className="p-8 pl-20 grid grid-cols-2 gap-4">
-              <div><button onClick={handleGetStarted} className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Go Back</button>
+              <div><button onClick={handleGetStarted} className="bg-blue-500 hover:bg-blue-700 p-8 2xl:font-medium 2xl:text-2xl text-white py-2 2xl:px-16 rounded-2xl">Go Back</button>
               </div>
-              <div><button onClick={startChatting} className="bg-blue-500 hover:bg-blue-700 font-medium text-2xl text-white py-2 px-20 rounded-2xl">Start Chatting</button>
+              <div><button onClick={startChatting} className="bg-blue-500 hover:bg-blue-700 p-8 2xl:font-medium 2xl:text-2xl text-white py-2 2xl:px-16 rounded-2xl">Start</button>
               </div>
             </div>
           </div>
 
-          <div className={`chat-section w-7/16 h-screen overflow-x-auto ${!chatting ? "goaway left" : "showup"}`}>
-            <div className={`bg-black rounded-2xl mask-r-from-90% pr-12`}><Chatbox girl={girl} /></div>
+          <div className={`chat-section w-[100%] fixed top-[25%] 2xl:top-0 h-[75%] 2xl:w-7/16 2xl:h-screen overflow-x-auto ${!chatting ? "goaway left" : "showup"}`}>
+            <div className={`bg-black rounded-2xl 2xl:mask-r-from-90% 2xl:pr-12 h-1/2 2xl:h-auto`}><Chatbox girl={girl} /></div>
           </div>
         </div>
 

@@ -60,7 +60,7 @@ const scrollToElement = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center py-4 px-8">
+    <div className="2xl:min-h-screen flex flex-col items-center py-4 px-8">
       <div id="chatBox" className="flex flex-col gap-8 w-full max-w-4xl overflow-auto">
 
         {messages.length && messages.map((message, index, row) => {
