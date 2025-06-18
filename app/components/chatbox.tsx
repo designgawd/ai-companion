@@ -79,14 +79,14 @@ function Chatbox({girl}) {
           className="flex items-center justify-center gap-4"
         >
           <input
-            className="rounded-lg p-4 bg-gray-300 drop-shadow-xl/25 border-solid border-amber-50 border-4 w-[500px]"
-            placeholder="Say something to Alara..."
+            className="rounded-lg p-4 bg-gray-300 drop-shadow-xl/25 border-solid border-amber-50 border-4 text-gray-600 w-[500px]"
+            placeholder={`Say something to ${bargirl.name}...`}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           />
 
           <button
-            className={`bg-gray-300 drop-shadow-xl/25 border-solid border-amber-50 border-4 p-4 rounded-lg ${
+            className={`bg-gray-300 drop-shadow-xl/25 border-solid border-amber-50 border-4 p-4 rounded-lg text-gray-600 ${
               loading ? "opacity-50" : ""
             }`}
             type="submit"

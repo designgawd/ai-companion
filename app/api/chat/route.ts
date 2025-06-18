@@ -2,7 +2,6 @@ import { NextRequest } from "next/server";
 import OpenAI from "openai";
 
 // ALARA : As low as reasonably achievable
-
 export async function GET(request: NextRequest) {
     const client = new OpenAI();
     const searchParams = request.nextUrl.searchParams
