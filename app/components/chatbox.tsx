@@ -120,7 +120,7 @@ function Chatbox({girl, callback}: ChatboxProps) {
         </form>
       </div>
       <div className="sticky bottom-0 right-0">
-        <Timer initialMinutes={0} initialSeconds={10} start={startTimer} callback={handleTimer} /></div>
+        <Timer initialMinutes={3} initialSeconds={0} start={startTimer} callback={handleTimer} /></div>
     </div>
 
   );
