@@ -40,7 +40,7 @@ function HomePage() {
       {<img 
         src={bartenders[girl].image} 
         alt={bartenders[girl].name} 
-        width={'100'}
+        width={"100"}
         className={`min-h-screen min-w-screen absolute top-0 left-50 ${!chatting ? "goaway right" : "showup"}`}/>}
 
       <Image alt="" src={logo} className={`fixed top-8 w-[12%] left-right ${chatting ? "right-pos" : "left-pos"}`} />
@@ -83,7 +83,7 @@ function HomePage() {
                 You will meet a random girl.  Each girl can have a different personality.  This will give you the challenges of meeting different type of girls each time you use this service.
               </p>
               <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
-                You will only have 3 minutes... she is busy, so she doesn't have much time and there is plenty of competition around you!  Don't forget to order your drink before you lose her.
+                You will only have 3 minutes... she is busy, so she doesn&apos;t have much time and there is plenty of competition around you!  Don&apos;t forget to order your drink before you lose her.
               </p>
               <p className="text-amber-50 py-4 text-xl min-[2400px]:text-4xl">
                 If you are not interseted in your bartender you wait for the next on by refreshing the page and starting over.  Luck you, not many people get that chance!
