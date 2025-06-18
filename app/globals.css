@@ -50,14 +50,20 @@ body {
 }
 
 .left-pos{
-  left: 2rem;
-  right: initial;
-  transition: left 2s, right 2s;
+  left: 5%;
+  right: 0;
+  transition: left 1s, right 1s;
+
 } 
 
 .right-pos{
   left:initial;
-  right: 2rem;
-  transition: left 2s, right 2s;
+  right: 10%;
+  transition: left 1s, right 1s;
+
+  @media screen and (max-width: 768px) {
+    right: initial;
+    left: 5%;
+  }
 }
 
