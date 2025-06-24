@@ -98,10 +98,14 @@ npm install --save-dev jest @testing-library/react
 ## 📌 Roadmap
 
 - [x] MVP launch with OpenAI support
-- [ ] Add model selection UI
-- [ ] Export chat history
 - [ ] Mobile-first optimizations
+- [ ] Paid Subscription for prolonged experience
+- [ ] Add model selection UI
+- [ ] Take the experience to a second date or take the bartender home **(explicit)**
+- [ ] Image Transition (expression, location, added emerion)
 - [ ] Voice interaction support
+- [ ] Male Companion Integration
+- [ ] Motion Video of Companion intead of images
 
 ---
 
